@@ -1,0 +1,40 @@
+<h5>All Transport List</h5>
+<!-- <div *ngFor="let cust of customers">
+  <a [routerLink]="['/customers', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a>
+</div> -->
+
+<div class="col-sm-12" style="padding: 0">
+  <table class="table">
+    <thead style="background-color: #dcdcdc;">
+      <tr>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Vehicle Number</th>
+        <th scope="col">Material Name</th>
+        <th scope="col">Pick Up Point</th>
+        <th scope="col">Drop Point</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Updated At</th>
+        <th scope="col">Action</th>	
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trans of transports">
+        <td>{{ trans.drivername}}</td>
+        <td>{{ trans.vehiclenumber}}</td>
+        <td>{{ trans.materialname}}</td>
+        <td>{{ trans.pickpoint}}</td>
+        <td>{{ trans.droppoint}}</td>
+        <td>{{ trans.qty}}</td>
+        <td>{{ trans.rate}}</td>
+        <td>{{ trans.createdAt | date : 'EEEE, MMMM d, h:mm' }}</td>
+        <td>{{ trans.updatedAt | date : 'EEEE, MMMM d, h:mm' }}</td>
+        <td>
+        <a class="action-icons" href="javascript:void(0)" [routerLink]="['/transports', trans.transportid]"><i class="fa fa-pencil"></i></a>
+        <a class="action-icons" href="javascript:void(0)" (click)="deleteTransport(trans.transportid)"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

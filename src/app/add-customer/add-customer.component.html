@@ -1,0 +1,76 @@
+<h3>Add Customer</h3>
+<div [hidden]="submitted">
+    <form #addCustomerForm="ngForm">
+
+      <div class="form-group">
+        <label for="fishname">Fish Name</label>
+        <input type="text" class="form-control" id="fishname" placeholder="Give Fishname" 
+        required
+        [(ngModel)]="customer.fishname" name="fishname" #fishname="ngModel">
+        <div [hidden]="fishname.valid || fishname.pristine"
+             class="alert alert-danger">
+            Fish Name is required
+        </div>
+      </div>
+      
+      
+
+      <div class="form-group">
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+        <!-- <button type="button" class="btn btn-success btn-s" 
+        (click)="uploader.uploadAll()" 
+        [disabled]="!uploader.getNotUploadedItems().length" >
+            Upload an Image
+        </button> -->
+      </div>
+      
+      <div class="form-group">
+        <label for="fishsize">Fish Size</label>
+        <input type="text" class="form-control" id="fishsize" 
+        placeholder="Give Fish size"
+        required
+        [(ngModel)]="customer.fishsize" name="fishsize" #fishsize="ngModel">
+        <div [hidden]="fishsize.valid || fishsize.pristine"
+             class="alert alert-danger">
+             Fish size is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input type="text" class="form-control" id="qty" 
+        placeholder="Give Quantity"
+        required
+        [(ngModel)]="customer.qty" name="qty" #qty="ngModel">
+        <div [hidden]="qty.valid || qty.pristine"
+             class="alert alert-danger">
+             Quantity is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" 
+        placeholder="Give Price"
+        required
+        [(ngModel)]="customer.price" name="price" #price="ngModel">
+        <div [hidden]="price.valid || price.pristine"
+             class="alert alert-danger">
+             Price is required
+        </div>
+      </div>
+      
+      <div class="btn-group btn-group-sm">
+      	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+      	<button type="button" class="btn btn-dark" (click)="uploader.uploadAll()" [disabled]="!addCustomerForm.form.valid">Add</button>
+      </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light"></span></p>
+	<div class="btn-group btn-group-sm">
+    	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    	<button type="button" class="btn btn-dark" (click)="newCustomer(); addCustomerForm.reset()">Continue</button>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<h3>Add Customer</h3>
+<div [hidden]="submitted">
+    <form #addTransportForm="ngForm">
+
+      <div class="form-group">
+        <label for="drivername">Driver Name</label>
+        <input type="text" class="form-control" id="drivername" placeholder="Give Driver Name" 
+        required
+        [(ngModel)]="transport.drivername" name="drivername" #drivername="ngModel">
+        <div [hidden]="drivername.valid || drivername.pristine"
+             class="alert alert-danger">
+            Driver Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="vehiclenumber">Vehicle Number</label>
+        <input type="text" class="form-control" id="vehiclenumber" placeholder="Give Vehicle Number"
+        required
+        [(ngModel)]="transport.vehiclenumber" name="vehiclenumber" #vehiclenumber="ngModel">
+        <div [hidden]="vehiclenumber.valid || vehiclenumber.pristine"
+             class="alert alert-danger">
+            Vehicle Number is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="materialname">Material Name</label>
+        <input type="text" class="form-control" id="materialname" placeholder="Give Material Name" 
+        required
+        [(ngModel)]="transport.materialname" name="materialname" #materialname="ngModel">
+        <div [hidden]="materialname.valid || materialname.pristine"
+             class="alert alert-danger">
+             Material Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pickpoint">Pick Up Point</label>
+        <input type="text" class="form-control" id="pickpoint" placeholder="Give Pick Up Point" 
+        required
+        [(ngModel)]="transport.pickpoint" name="pickpoint" #pickpoint="ngModel">
+        <div [hidden]="pickpoint.valid || pickpoint.pristine"
+             class="alert alert-danger">
+             Pick up point  is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="droppoint">Drop Point</label>
+        <input type="text" class="form-control" id="droppoint" placeholder="Give Drop Point" 
+        required
+        [(ngModel)]="transport.droppoint" name="droppoint" #droppoint="ngModel">
+        <div [hidden]="droppoint.valid || droppoint.pristine"
+             class="alert alert-danger">
+             Drop point is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input type="text" class="form-control" id="qty" placeholder="Give Quantity" 
+        required
+        [(ngModel)]="transport.qty" name="qty" #qty="ngModel">
+        <div [hidden]="qty.valid || qty.pristine"
+             class="alert alert-danger">
+             Quantity is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rate">Rate</label>
+        <input type="text" class="form-control" id="rate" placeholder="Give Rate" 
+        required
+        [(ngModel)]="transport.rate" name="rate" #rate="ngModel">
+        <div [hidden]="rate.valid || rate.pristine"
+             class="alert alert-danger">
+             Rate is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Give Description" 
+        required
+        [(ngModel)]="transport.description" name="description" #description="ngModel">
+        <div [hidden]="description.valid || description.pristine"
+             class="alert alert-danger">
+             Description is required
+        </div>
+      </div>
+
+      <div class="btn-group btn-group-sm">
+      	<!-- <button type="button" class="btn btn-dark" (click)="goBack()">Back</button> -->
+      	<button type="button" class="btn btn-dark" (click)="addTransport()" [disabled]="!addTransportForm.form.valid">Add</button>
+      </div>
+    </form>
+</div>
+
+<!-- <div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{customer.firstname}}  {{customer.lastname}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    	<button type="button" class="btn btn-dark" (click)="newCustomer(); addCustomerForm.reset()">Continue</button>
+    </div>
+</div> -->

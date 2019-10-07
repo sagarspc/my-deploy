@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "content/css/bootstrap.min.css";
+@import "content/css/font-awesome.min.css";
+@import "content/css/select.css";
+@import "content/css/sidebar.css";
+@import "content/css/entero.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    font-family: 'Roboto';
+} */
+/* You can add global styles to this file, and also import other style files */
+@import "content/css/font-awesome.min.css";
+@import "content/css/entero.css";

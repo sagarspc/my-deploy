@@ -1,0 +1,40 @@
+<h5 class="mb-3 mt-3">Available Fishes</h5>
+<!-- <div *ngFor="let cust of customers">
+  <a [routerLink]="['/customers', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a>
+</div> -->
+
+<div class="col-sm-12" style="padding: 0">
+  <table class="table table-bordered">
+    <thead style="background-color: #dcdcdc;">
+      <tr>
+        <th scope="col">Fish Name</th>
+        <th scope="col">Current Stock Image</th>
+        <th scope="col">Fish Size</th>
+        <th scope="col">Available Quntity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Updated At</th>
+        <th scope="col">Action</th>	
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cust of customers">
+        <td>{{ cust.fishname}}</td>
+        <td>
+      
+      <img src="{{cust.imageurl}}" class="image-responsive" width="100">
+      
+        </td>
+        <td>{{ cust.fishsize}}</td>
+        <td>{{ cust.qty}}</td>
+        <td>{{ cust.price}}</td>
+        <td>{{ cust.createdAt | date : 'EEEE, MMMM d, h:mm' }}</td>
+        <td>{{ cust.updatedAt | date : 'EEEE, MMMM d, h:mm' }}</td>
+        <td>
+        <a class="action-icons" href="javascript:void(0)" [routerLink]="['/customers', cust.id]"><i class="fa fa-pencil"></i></a>
+        <a class="action-icons" href="javascript:void(0)" (click)="deleteCustomer(cust.id)"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
